@@ -1,0 +1,16 @@
+name: "Build"
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+      - name: Build docker images
+        run: docker build -t local < .devcontainer/Dockerfile
+      - name: Build presentation
+        run: docker run -it -v $PWD:/srv -w/srv local cd presentation mkdir build && cd build && cmake .. && make
+      - name: Build examples
+        run: docker run -it -v $PWD:/srv -w/srv local cd examples mkdir build && cd build && cmake .. && make
