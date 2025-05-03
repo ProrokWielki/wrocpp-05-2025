@@ -1,0 +1,16 @@
+{
+    "build": {
+        "dockerfile": "Dockerfile",
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cmake-tools",
+                "twxs.cmake",
+                "ms-azuretools.vscode-docker",
+                "tecosaur.latex-utilities",
+                "mathematic.vscode-latex",
+             ]
+        }
+    },
+}
