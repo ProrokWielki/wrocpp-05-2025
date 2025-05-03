@@ -17,6 +17,6 @@ jobs:
           push: false
           tags: local
       - name: Build presentation
-        run: docker run -v $PWD:/srv -w/srv local cd presentation mkdir build && cd build && cmake .. && make
+        run: docker run -v $PWD:/srv -w/srv local sh -c "cd presentation mkdir build && cd build && cmake .. && make"
       - name: Build examples
-        run: docker run -v $PWD:/srv -w/srv local cd examples mkdir build && cd build && cmake .. && make
+        run: docker run -v $PWD:/srv -w/srv local sh -c "cd examples mkdir build && cd build && cmake .. && make"
